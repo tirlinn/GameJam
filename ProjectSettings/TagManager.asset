@@ -5,6 +5,11 @@ TagManager:
   serializedVersion: 2
   tags:
   - Water
+  - randomPoint
+  - RightAttractions
+  - Attraction
+  - List
+  - Land
   layers:
   - Default
   - TransparentFX
@@ -14,9 +19,9 @@ TagManager:
   - UI
   - 
   - 
-  - 
-  - 
-  - 
+  - Player
+  - Ship
+  - Land
   - 
   - 
   - 
