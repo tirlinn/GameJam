@@ -31,6 +31,15 @@ public class Player : MonoBehaviour
         {
             transform.position = transform.parent.transform.position;
         }
+        
+        if (transform.parent == null && mountAllowed)
+        {
+            if(Input.GetKeyDown(KeyCode.Space))
+            {
+                MountShip(collisionItem);
+            }
+        }
+
     }
     void FixedUpdate()
     {
@@ -113,10 +122,10 @@ public class Player : MonoBehaviour
             }
             body.velocity = new Vector2(velocityX, velocityY);
             
-            if(Input.GetKeyDown(KeyCode.Space) && mountAllowed)
-            {
-                MountShip(collisionItem);
-            }
+            // if(Input.GetKeyDown(KeyCode.Space) && mountAllowed)
+            // {
+            //     MountShip(collisionItem);
+            // }
         }
     }
     void OnTriggerEnter2D(Collider2D hitObject)

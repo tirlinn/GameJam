@@ -24,20 +24,27 @@ public class Ship : MonoBehaviour
         player = GameObject.Find("Player");
     }
     // Update is called once per frame
-    void FixedUpdate()
+    void Update()
     {
         if (player.GetComponent<SpriteRenderer>().sortingOrder == 0)
         {
             text.gameObject.SetActive(true);
-            text.text = "Press M to get out of the ship";
+            text.text = "Press F to get out of the ship";
             onShip = 1;
-            if(Input.GetKeyDown(KeyCode.M))
+        }
+        
+        if (onShip == 1)
+        {
+            if(Input.GetKeyDown(KeyCode.F))
             {
-                print("Here");
                 DismountShip();
-                text.gameObject.SetActive(false);
+                text.text = "Press spacebar to get into Ship";
+                body.velocity = new Vector2(0, 0);
             }
         }
+    }
+    void FixedUpdate()
+    {
         if (onShip == 1)
         {
             float inputX = Input.GetAxisRaw("Horizontal");
